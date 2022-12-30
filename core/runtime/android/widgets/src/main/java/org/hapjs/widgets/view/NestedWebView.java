@@ -80,6 +80,7 @@ import org.hapjs.bridge.provider.webview.WebviewSettingProvider;
 import org.hapjs.common.net.UserAgentHelper;
 import org.hapjs.common.utils.FeatureInnerBridge;
 import org.hapjs.common.utils.FileUtils;
+import org.hapjs.common.utils.LogUtils;
 import org.hapjs.common.utils.NavigationUtils;
 import org.hapjs.common.utils.ThreadUtils;
 import org.hapjs.common.utils.UriUtils;
