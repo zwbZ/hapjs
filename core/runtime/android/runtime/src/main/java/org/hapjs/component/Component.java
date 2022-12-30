@@ -539,7 +539,8 @@ public abstract class Component<T extends View>
 
         if (mTransform != null
                 && (!Float.isNaN(mTransform.getTranslationXPercent())
-                || !Float.isNaN(mTransform.getTranslationYPercent()))) {
+                || !Float.isNaN(mTransform.getTranslationYPercent()) ||
+                !Float.isNaN(mTransform.getTranslationZPercent()))) {
             addGlobalLayoutListener();
         } else if (mTransformLayoutListener != null) {
             removeGlobalLayoutListener();
@@ -3627,6 +3628,11 @@ public abstract class Component<T extends View>
                         component.mTransform.getTranslationYPercent() * component.mHost.getHeight();
                 component.mTransform.setTranslationY(translationY);
                 component.mHost.setTranslationY(translationY);
+            }
+            if (!Float.isNaN(component.mTransform.getTranslationZPercent())) {
+                float translationZ = component.mTransform.getTranslationZPercent() * 2; // 2dp thickness
+                component.mTransform.setTranslationZ(translationZ);
+                component.mHost.setTranslationZ(translationZ);
             }
         }
     }
